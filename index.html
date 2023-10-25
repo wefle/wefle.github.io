@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" >
+    <title>Harzer Wandernadel Test</title>
+    <link rel="icon" type="image/x-icon" href="pictures/person-hiking-solid.svg">
+</head>
+<body>
+    <div class="head">
+        <h1>Harzer Wandernadel</h1>        
+    </div>
+    <div id="default_container">
+        <div class="spacing">
+            <button id="dbutton"><i class="fa-solid fa-repeat"></i></button>
+        </div>         
+        <div class="map_legend_container">
+            <!--map-->
+            <div id="def_map" class="map_container"></div>
+            <!--map-->
+            <!--legend window-->
+            <div class="legend">
+                <i class="fa-regular fa-square-check" id="dnormal"><p>Normale Stempelstellen</p></i> <!---fa-square-->
+                <i class="fa-regular fa-square-check" id="dspecial"><p>Sonderstempelstellen</p></i> 
+                <i class="fa-regular fa-square-check" id="dsightseeing"><p>Besondere Sehenswürdigkeiten</p></i>                 
+            </div>             
+            <!--legend window-->
+        </div> 
+        <!--info window-->
+        <div class="info_container">
+            <h1 class="headline">Stempelstellen</h1>
+            <div class="text_container"></div> 
+        </div>
+        <!--info window-->
+    </div>    
+    <div id="spec_container">
+        <div class="spacing">
+            <button id="sbutton"><i class="fa-solid fa-repeat"></i></button>
+        </div> 
+        <div class="map_legend_container">
+            <!--map-->
+            <div id="spec_map" class="map_container"></div>
+            <!--map-->
+            <!--legend window-->
+            <div class="legend">
+                <i class="fa-regular fa-square-check" id="snormal"><p>Normale Stempelstellen</p></i> <!---fa-square-->
+                <i class="fa-regular fa-square-check" id="sspecial"><p>Sonderstempelstellen</p></i> 
+                <i class="fa-regular fa-square-check" id="ssightseeing"><p>Besondere Sehenswürdigkeiten</p></i>                 
+            </div>             
+            <!--legend window-->
+        </div> 
+        <div class="list_container">
+            <h1 class="headline">Stempelstellen</h1>
+            <div class="table_container">
+                <div id="tab_head"></div>
+                <div id="tab_body"></div>
+                <div id="tab_foot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
+
+    <script src="https://unpkg.com/topojson@3"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="content.js"></script>
+</body>
+</html>

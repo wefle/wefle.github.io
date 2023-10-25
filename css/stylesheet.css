@@ -1,0 +1,526 @@
+html, body {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    background-color: #333;
+}  
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/*head*/
+.head{
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    display: grid;
+}
+.head h1{
+    font-family: Young Serif;
+    font-size: 50px;
+    color:aliceblue;
+    align-self: center;
+}
+/*head*/
+
+/************default_view*************************/
+/*container -> light gray background*/
+#default_container{
+    width: 100%;
+    background-color: #818281;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #121212;
+}
+#default_container .info_container{
+    width: 30%;
+    margin-left: 50px;
+}
+#default_container .spacing{
+    width: 5%;
+}
+#default_container .spacing #dbutton{
+    font-size: 20px;
+    color:aliceblue;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+#default_container .map_legend_container{
+    width: 60%;
+}
+/*container -> gray background*/
+
+/*map - view box for marker and background map*/
+#default_container #def_map{    
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #121212;
+    z-index: 1;
+}
+#default_container .view_box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+#default_container #map_container_container{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    opacity: 0.8;
+}
+/*map - view box for marker and background map*/
+
+/*headline of side panel*/
+#default_container h1.headline{
+    font-family: Young Serif;
+    font-size: 26px;
+    color: #121212;
+    text-align: center;
+}
+/*headline of side panel*/
+
+/*info window*/
+#default_container .text_container{
+    margin-left: 15px;
+    padding-top: 5px;
+    padding-left: 5px;
+    width: 94%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #121212; 
+}
+#default_container .text_container h1{
+    font-family: Young Serif;
+    font-size: 21px;
+    color: #121212;
+    text-align: center;
+}
+#default_container .text_container i {
+    font-size: 18px;
+    color: #121212;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 5px;
+    height: 30px;
+}
+#default_container .text_container p{
+    font-family: Young Serif;
+    font-weight: 300;
+    padding-left: 30px;
+    position: relative;
+    top: -16.5px;
+    margin: 2px;
+}
+/*info window*/
+
+/*legend window*/
+#default_container .legend{
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #121212; 
+}
+#default_container .legend i{
+    font-size: 18px;
+    color: #121212;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 5px;
+    height: 20px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #121212;
+}
+#default_container .legend p{
+    margin: 0;
+    font-family: Young Serif;
+    font-weight: 300;
+    padding-left: 30px;
+    position: relative;
+    top: -16.5px;
+    -webkit-text-stroke-width: 0;
+}
+/*legend window*/
+
+/*appearance of links*/
+#default_container a.link{
+    color: #308223;
+    text-decoration: none;
+}
+#default_container a.link:hover{
+    color: #1b4b14;
+}
+#default_container a.link:active{
+    color: #6bc25d;
+    text-decoration: none;
+}
+/*appearance of links*/
+
+/*adjust to window size*/
+@media only screen and (max-width: 1386px) {    
+    #default_container h1.headline{
+        font-size: 24px;
+    }
+    #default_container .info_container{
+        margin-left: 25px;
+    }
+    #default_container .text_container h1{
+        font-size: 18px;
+    }
+    #default_container .text_container i,p{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 1086px) {
+    #default_container h1.headline{
+        font-size: 21px;
+    }
+    #default_container .info_container{
+        margin-left: 5px;
+        width: 38%;
+    }
+    #default_container .text_container{
+        width: 90%;
+    }
+    #default_container div .spacing_vertical{
+        width: 2%;
+    }
+}
+@media only screen and (max-width: 986px) {    
+    #default_container .spacing #dbutton{
+        margin-left: 5px;
+    }
+    #default_container h1.headline{
+        font-size: 18px;
+    }
+    #default_container .text_container h1{
+        font-size: 16px;
+    }
+    #default_container .text_container i,p{
+        font-size: 15px;
+        padding-left: 5px;
+    }
+    #default_container .legend i,p{
+        font-size: 15px;
+        padding-left: 15px;
+    }
+    #default_container .legend p{
+        top: -15px
+    }
+    #default_container .text_container p{
+        top: -15px
+    }
+}
+@media only screen and (max-width: 786px) {    
+    #default_container .spacing{
+        height: 4%;
+    }
+    #default_container .head{
+        height: 100px;
+    }
+    #default_container .head h1{
+        font-size: 30px;
+    }
+    #default_container {
+        display: block;
+        height: 900px;
+    }
+    #default_container .map_legend_container{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+    #default_container .info_container {
+        width: 100%;
+        margin: 0;
+    }
+    #default_container #map{
+        width: 95%;
+        height: 520px;
+    }
+    #default_container h1.headline{
+        font-size: 21px;
+    }
+    #default_container .text_container{
+        width: 94%;
+        margin: 2%;
+    }
+    #default_container.text_container h1{
+        font-size: 18px;
+    }
+    #default_container .text_container i,p{
+        padding-left: 15px;     
+    }
+    #default_container .legend{
+        width: 100%;
+    }
+    #default_container .legend i,p{
+        padding-left: 15px;
+    }
+}
+/*adjust to window size*/
+/************default_view*************************/
+/************list_view****************************/
+/*container -> light gray background*/
+#spec_container{
+    width: 100%;
+    background-color: #818281;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #121212;
+}
+#spec_container .spacing{
+    width: 4.5%;
+}
+#spec_container .spacing #sbutton{
+    font-size: 20px;
+    color:aliceblue;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+#spec_container .map_legend_container{
+    width: 45.5%;
+}
+/*container -> light gray background*/
+
+/*map - view box for marker and background map*/
+#spec_container #spec_map{
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #121212;
+    z-index: 1;
+}
+#spec_container .view_box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+#spec_container #map_container_container{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    opacity: 0.8;
+}
+/*map - view box for marker and background map*/
+
+/*legend window*/
+#spec_container .legend{
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #121212; 
+}
+#spec_container .legend i{
+    font-size: 18px;
+    color: #121212;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 5px;
+    height: 20px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #121212;
+}
+#spec_container .legend p{
+    margin: 0;
+    font-family: Young Serif;
+    font-weight: 300;
+    padding-left: 25px;
+    position: relative;
+    top: -16.5px;
+    -webkit-text-stroke-width: 0;
+}
+/*legend window*/
+
+/*list window*/
+#spec_container .list_container{
+    width: 49%;
+    margin-left: 1%;
+}
+#spec_container h1.headline{
+    font-family: Young Serif;
+    font-size: 26px;
+    color: #121212;
+    text-align: center;
+}
+/*table*/
+#spec_container .table_container{
+    padding-top: 5px;
+    padding-left: 5px;
+    width: 97%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #121212;
+    overflow: hidden;
+}
+/***headline***/
+#spec_container #type{
+    font-size: 20px;
+    font-family: Young Serif;
+    font-weight: 600;
+    margin: 2px;
+}
+/**search window**/
+#spec_container #tab_head div{
+    display: flex;
+    height: 40px;
+    align-items: center;
+} 
+#spec_container #tab_head div input{
+    margin-left: 5px;
+    background-color: aliceblue;
+    border: none;
+    border-bottom: 2px solid #818281;
+    font-family: Young Serif;
+}
+#spec_container #tab_head div input:focus{
+    outline: none;
+    border: 3px solid #308223;
+}
+/***table format***/
+#spec_container table{
+    width: 98%;
+    border-spacing: 0;
+}
+/***table head***/
+#spec_container thead{
+    font-size: 16px;
+    font-family: Young Serif;    
+    font-weight: 600;
+}
+#spec_container thead td{
+    width: 33%;
+}
+/***table body***/
+#spec_container #tab_body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari and Opera */
+}
+#spec_container #tab_body{
+    margin-left: 5px;
+    height: 450px;
+    overflow: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#spec_container tbody tr{
+   height: 35px;
+}
+#spec_container tbody td{
+    width: 33%;
+    font-family: Young Serif;
+    font-size: 14px;
+}
+#spec_container tbody td:nth-child(3){
+    text-align: center;
+}
+#spec_container .tab_small{
+    display: flex;
+}
+#spec_container .tab_small p{
+    width: 50%;
+    margin: 0;
+    font-size: 14px;
+}
+#spec_container .tab_small p:nth-child(2){
+    text-align: right;
+}
+#spec_container tbody label{
+    display: none;
+}
+/*table*/
+#spec_container a{
+    color: #308223;
+    text-decoration: none;
+}
+#spec_container tbody tr:hover a{
+    color: aliceblue;
+}
+#spec_container tbody tr:hover a:hover{
+    color: #6bc25d;
+}
+/***table foot***/
+#spec_container #tab_foot{
+    height: 20px;
+}
+/*list window*/
+/*adjust to window size*/
+@media only screen and (max-width: 1386px) {    
+    #spec_container thead{
+        display: none;
+    }
+    #spec_container tbody tr{
+        display: grid;
+        height:fit-content;    
+        border-bottom: 2px solid #308223;  
+        margin-bottom: 10px;  
+    }
+    #spec_container tbody td{
+        width: 100%;
+        font-size: 14px;
+    }
+    #spec_container tbody td div{
+        display: flex;
+        justify-content: space-between;
+    }
+    #spec_container tbody label{
+        display: inline;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+    #spec_container .tab_small p{
+        width: fit-content;
+        margin-left: 5px;
+        padding: 0;
+    }
+} 
+@media only screen and (max-width: 1086px) {
+    #spec_container .map_legend_container{
+        width: 60%;
+    }
+    #spec_container #tab_head div{
+        display: block;
+        height: 70px;
+    }
+}
+@media only screen and (max-width: 986px) {    
+   #spec_container .spacing{
+    width: 5%;
+   }
+   #spec_container .spacing #sbutton{
+    margin-left: 2px;
+   }
+
+}
+@media only screen and (max-width: 786px) {    
+    #spec_container .spacing{
+        height: 35px;
+        margin-left: 0.5%;
+    }
+    #spec_container{
+        display: block;
+    }
+    #spec_container .map_legend_container{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+    #spec_container .list_container{
+        width: 97%;
+        margin-left: 2.5%;
+    }
+}
+/*adjust to window size*/
+/************list_view****************************/
